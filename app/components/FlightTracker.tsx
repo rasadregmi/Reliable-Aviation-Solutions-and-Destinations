@@ -18,7 +18,7 @@ export function FlightTracker() {
     } catch (error) {
       console.error('Error tracking flight:', error)
       toast.error('Failed to track flight. Please try again.')
-    }
+    } 
   }
 
   return (
