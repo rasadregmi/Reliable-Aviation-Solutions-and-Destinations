@@ -1,7 +1,7 @@
 import { Button } from './components/ui/button'
 import Image from 'next/image'
-import Link from 'next/link'
 import { SearchForm } from './components/SearchForm'
+import { FlightTracker } from './components/FlightTracker'
 
 export default function Home() {
   return (
@@ -41,9 +41,9 @@ export default function Home() {
               </div>
               <div className="flex justify-center gap-4 md:gap-8 mt-4 md:mt-8">
                 {[
-                  { value: '100k+', label: 'Travelers' },
-                  { value: '500+', label: 'Airlines' },
-                  { value: '98%', label: 'Satisfaction' },
+                  { value: '0k+', label: 'Travelers' },
+                  { value: '0+', label: 'Airlines' },
+                  { value: '0%', label: 'Satisfaction' },
                 ].map((stat, i) => (
                   <div key={i} className="text-center">
                     <div className="bg-blue-600 w-16 h-16 md:w-20 md:h-20 rounded-full flex items-center justify-center text-white text-sm md:text-xl font-bold glow">
@@ -57,27 +57,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Featured Destinations Section */}
-        <div className="mt-20 md:mt-32">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">Featured Destinations</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {['Paris', 'Tokyo', 'New York'].map((city, index) => (
-              <div key={index} className="bg-gray-800 bg-opacity-50 backdrop-blur-sm rounded-lg overflow-hidden">
-                <Image
-                  src={`/placeholder.svg?height=200&width=400&text=${city}`}
-                  alt={city}
-                  width={400}
-                  height={200}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold text-white mb-2">{city}</h3>
-                  <p className="text-gray-400 mb-4">Experience the magic of {city}</p>
-                  <Button variant="outline" className="w-full">Explore Flights</Button>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Flight Tracker Section */}
+        <div className="mt-16 md:mt-24">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6 text-center">Track Your Flight</h2>
+          <FlightTracker />
         </div>
       </div>
     </div>
